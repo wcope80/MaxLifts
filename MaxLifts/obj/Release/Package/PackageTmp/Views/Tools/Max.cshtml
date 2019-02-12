@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Max";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Max Calculator</h2>
+
+<div class="form-horizontal">
+    <fieldset>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-1 control-label" for="repsinput">Reps</label>
+            <div class="col-md-2">
+                <input id="repsinput" name="repsInput" type="text" placeholder="" class="form-control">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-1 control-label" for="repsinput">Weight</label>
+            <div class="col-md-2">
+                <input id="weightinput" name="weightInput" type="text" placeholder="" class="form-control">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-1 control-label" for="repsinput">Estimated Max</label>
+            <div class="col-md-2">
+                <input id="maxinput" name="maxinput" type="text" placeholder="" class="form-control" disabled>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+            <label class="control-label" for="calcbutton"></label>
+            <div class="controls col-md-offset-1">
+                <button id="calcbutton" name="calcbutton" class="btn btn-info">Calculate</button>
+            </div>
+        </div>
+        <p><br />*Calculator uses Jim Wendler's formula from the 5/3/1 book</p>
+    </fieldset>
+</div>
+<script type="text/javascript">
+    $("#calcbutton").click(function () {
+        var weight = parseInt($('#weightinput').val());
+        var reps = parseInt($('#repsinput').val());
+
+        var multiplier = .03333
+        var max = (multiplier * weight * reps + weight).toFixed(0)
+        $("#maxinput").val(max)
+     });
+
+</script>

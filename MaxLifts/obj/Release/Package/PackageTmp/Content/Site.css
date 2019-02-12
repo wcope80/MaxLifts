@@ -1,0 +1,106 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.setTblTitle {
+    margin-left: -24px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.addSetBtn {
+    display: block;
+    margin-bottom: 10px;
+    float: right !important;
+}
+
+.navbar {
+    background: #660000;
+  /*background: -webkit-radial-gradient(#660000, #3D0000);
+  background:    -moz-radial-gradient(#660000, #3D0000);
+  background:         radial-gradient(#660000, #3D0000);*/
+
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #999;
+  background-color: #520000;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #999;
+  background-color: transparent;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #999;
+  background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-top-color: #999;
+    border-bottom-color: #999;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #660000;
+}
+
+.barbell {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dateTimeInput {
+    width: auto;
+}
+
+.chart {
+        display: block;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: auto;
+}

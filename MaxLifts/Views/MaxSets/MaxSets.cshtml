@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<MaxLifts.Models.Set>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@*@model IEnumerable<MaxLifts.Models.Set>*@
+
+@{
+    ViewBag.Title = "MaxSets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    string lift = ViewBag.Message;
+}
+  <div class="panel-heading">    
+        <h2 class="panel-title"></h2> 
+            <div class="row">
+                  <div class="col-md-12">
+                        <div class="col-md-6 setTblTitle">
+                         @ViewBag.Message
+                        </div>
+                        <div class="col-md-6 text-right">
+                             <a style="" class="btn btn-small btn-primary" href="@Url.Action("AddSet","MaxSets", new {@lift = lift })"> Add Set <i class="glyphicon glyphicon-plus-sign"></i></a>
+                        </div>
+                  </div>
+            </div>
+                           
+  </div>
+
+
+   <table class="table table-striped">
+    <tr>
+        <th>Exercise</th>
+        <th>Weight</th>
+        <th>Reps</th>
+        <th>CalculatedMax</th>
+        <th>SetDate</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Exercise</td>
+            <td>@item.Weight</td>
+            <td>@item.Reps</td>
+            <td>@item.CalculatedMax</td>
+            <td>@item.SetDate</td>
+            <td><a href="@Url.Action("EditSet","MaxSets", new { @setId = @item.SetId }, null )"><i class="glyphicon glyphicon-edit"></i></a></td>
+        </tr>
+
+
+    }
+
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("MaxSets",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
